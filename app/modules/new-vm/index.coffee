@@ -162,7 +162,8 @@ module.exports = angular.module 'xoWebApp.newVm', [
         if pool or $scope.resourceSet
           selectedSrs = []
           forEach($scope.templateVBDs, (vbd) ->
-            selectedSrs.push(xoApi.get(vbd.VDI).$SR)
+            vdi = xoApi.get(vbd.VDI)
+            selectedSrs.push(vdi.$SR) if vdi
           )
           forEach($scope.VDIs, (vdi) ->
             selectedSrs.push(vdi.SR)
