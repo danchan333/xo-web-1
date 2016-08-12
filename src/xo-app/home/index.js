@@ -16,6 +16,7 @@ import Link from 'link'
 import map from 'lodash/map'
 import Page from '../page'
 import React from 'react'
+import Shortcuts from 'react-shortcuts/component'
 import SingleLineRow from 'single-line-row'
 import size from 'lodash/size'
 import { Card, CardHeader, CardBlock } from 'card'
@@ -405,6 +406,23 @@ export default class Home extends Component {
     return customFilters[this._getType()]
   }
 
+  _shortcutsHandler = command => {
+    switch (command) {
+      case 'HOST':
+        this._setType('host')
+        break
+      case 'POOL':
+        this._setType('pool')
+        break
+      case 'VM':
+        this._setType('VM')
+        break
+      case 'NEW_VM':
+        this.context.router.push('vms/new')
+        break
+    }
+  }
+
   _renderHeader () {
     const { type } = this.props
     const { filters } = OPTIONS[type]
@@ -575,6 +593,7 @@ export default class Home extends Component {
     const selectedItemsIds = keys(this._selectedItems)
 
     return <Page header={this._renderHeader()}>
+      <Shortcuts name='Home' handler={this._shortcutsHandler} targetNode={document.getElementById('xo-app')} />
       <div>
         <div className={styles.itemContainer}>
           <SingleLineRow className={styles.itemContainerHeader}>
