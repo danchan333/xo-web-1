@@ -46,6 +46,7 @@ var messages = {
   settingsAclsPage: 'ACLs',
   settingsPluginsPage: 'Plugins',
   settingsLogsPage: 'Logs',
+  settingsIpsPage: 'IPs',
   aboutPage: 'About',
   newMenu: 'New',
   taskMenu: 'Tasks',
@@ -148,6 +149,7 @@ var messages = {
   selectTags: 'Select tag(s)…',
   selectVdis: 'Select disk(s)…',
   selectTimezone: 'Select timezone…',
+  selectIp: 'Select IP(s)...',
   fillRequiredInformations: 'Fill required informations.',
   fillOptionalInformations: 'Fill informations (optional)',
   selectTableReset: 'Reset',
@@ -519,6 +521,8 @@ var messages = {
   vifStatusDisconnected: 'Disconnected',
   vifIpAddresses: 'IP addresses',
   vifMacAutoGenerate: 'Auto-generated if empty',
+  vifAllowedIps: 'Allowed IPs',
+  vifNoIps: 'No IPs',
 
   // ----- VM snapshot tab -----
   noSnapshots: 'No snapshots',
@@ -972,7 +976,19 @@ var messages = {
   logNoParams: 'No params',
   logDeleteAll: 'Delete all logs',
   logDeleteAllTitle: 'Delete all logs',
-  logDeleteAllMessage: 'Are you sure you want to delete all the logs?'
+  logDeleteAllMessage: 'Are you sure you want to delete all the logs?',
+
+  // ----- IPs ------
+  ipsPoolName: 'IP pool name',
+  ipsPoolIps: 'IPs',
+  ipsName: 'Name',
+  ipsNoIpPool: 'No IP pool',
+  ipsCreate: 'Create',
+  ipsDeleteAllTitle: 'Delete all IP pools',
+  ipsDeleteAllMessage: 'Are you sure you want to delete all the IP pools?',
+  ipsVifs: 'VIFs',
+  ipsNotUsed: 'Not used'
+
 }
 forEach(messages, function (message, id) {
   if (isString(message)) {
